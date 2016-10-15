@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from datetime import datetime
 import matplotlib.pyplot as pyplot
 import RPi.GPIO as GPIO
@@ -32,8 +34,3 @@ if __name__ == '__main__':
       line.append(str(RECEIVED_SIGNAL[0][i])+','+str(RECEIVED_SIGNAL[1][i])+'\n')
     fp.writelines(line)
     fp.close()
-
-    print '**Plotting results**'
-    pyplot.plot(RECEIVED_SIGNAL[0], RECEIVED_SIGNAL[1])
-    pyplot.axis([0, MAX_DURATION, -1, 2])
-    pyplot.show()
